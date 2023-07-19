@@ -1,0 +1,175 @@
+@import url('https://fonts.googleapis.com/css?family=Poppins:200,300,400,500,600,700,800,900&display=swap');
+
+* {
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
+.full-content {
+  display: flex;
+  flex-direction: row;
+}
+
+.content-box {
+  max-width: 50%;
+}
+.results {
+  max-width: 50%;
+  display: none;
+}
+
+.content {
+  padding: 20px;
+  background-color: #fff;
+  border-radius: 5px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+  margin-top: 1.5rem;
+}
+
+.results-bmi {
+  padding: 20px;
+  background-color: #fff;
+  border-radius: 5px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+}
+
+.full-disease {
+  padding: 20px;
+  background-color: #fff;
+  border-radius: 5px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+  margin-top: 2rem;
+}
+
+.disease {
+  text-align: center;
+  list-style-type: none;
+}
+
+.form-control {
+  width: 100%;
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+  margin-bottom: 10px;
+  appearance: none;
+}
+
+#pria,
+#wanita {
+  margin: 1rem 0 1rem 0;
+}
+
+button {
+  background-color: #4caf50;
+  color: #fff;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  margin-top: 10px;
+}
+
+.content {
+  margin: 2rem;
+}
+
+.full-results {
+  margin-left: 2rem;
+  margin-right: 2rem;
+}
+
+#datapengguna,
+.describe,
+.fitur-head {
+  margin-left: 2rem;
+  margin-right: 2rem;
+}
+
+.hasil {
+  margin-left: 2rem;
+}
+
+.results-content {
+  text-align: center;
+}
+
+.fitur-text {
+  margin-left: .5rem;
+}
+
+.information {
+  margin: 2rem;
+}
+
+/* Responsive */
+@media (max-width: 868px) {
+  .full-content {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .content-box {
+    max-width: 100%;
+  }
+  .results {
+    max-width: 100%;
+    display: none;
+  }
+}
+
+@media (max-width: 520px) {
+  .full-content {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .content-box {
+    max-width: 100%;
+  }
+  .results {
+    max-width: 100%;
+    display: none;
+  }
+}
+
+@media (max-width: 462px) {
+  .full-content {
+    display: flex;
+    flex-direction: column;
+    font-size: 90%;
+  }
+
+  .content {
+    margin: 1rem;
+  }
+  
+  .full-results {
+    margin-left: 1rem;
+    margin-right: 1rem;
+  }
+  
+  #datapengguna,
+  .describe,
+  .fitur-head {
+    margin-left: 1rem;
+    margin-right: 1rem;
+  }
+  
+  .hasil {
+    margin-left: 1rem;
+  }
+  
+  .results-content {
+    text-align: center;
+  }
+  
+  .fitur-text {
+    margin-left: -.5rem;
+  }
+  
+  .information {
+    margin: 1rem;
+  }
+}

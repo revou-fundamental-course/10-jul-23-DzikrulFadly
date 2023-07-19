@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Kalkulator BMI | Dzikrul Fadly</title>
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+
+<body>
+
+  <!-- Kalkulator BMI -->
+  <div class="full-container">
+    <div class="main-content">
+      <div class="full-content">
+        <div class="content-box">
+          <h3 id="datapengguna">Kalkulator BMI</h3>
+          <p class="describe">Berat badan ideal adalah impian semua orang. Tidak hanya memiliki bentuk tubuh yang menunjang penampilan, berat badan ideal juga menandakan kondisi tubuh yang sehat. Bagaimana denganmu? Yuk, hitung sekarang di kalkulator BMI.</p>
+          <div class="content">
+            <form id="frmbmi" name="frmbmi" class="form form-horizontal" autocomplete="off" onsubmit="return false;">
+
+              <div class="form-group">
+                <label class="control-label">Jenis Kelamin</label>
+                <div class="inputGroupContainer">
+                  <input type="radio" id="pria" name="gender" value="pria" checked />
+                  <label for="pria">Pria</label>
+                  <input type="radio" id="wanita" name="gender" value="wanita" />
+                  <label for="wanita">Wanita</label>
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label class="control-label">Berat Badan (kg)</label>
+                <div class="inputGroupContainer">
+                  <div class="input-group">
+                    <span class="input-group-addon"></span>
+                    <input name="bmiWeight" id="bmiWeight" class="form-control" type="number" required="required" onkeypress="return OnlyNumbers(event);" placeholder="Masukkan Berat Badan" />
+                  </div>
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label class="control-label">Usia (tahun)</label>
+                <div class="inputGroupContainer">
+                  <div class="input-group">
+                    <span class="input-group-addon"></span>
+                    <input name="bmiAge" id="bmiAge" class="form-control" type="number" required="required" onkeypress="return OnlyNumbers(event);" placeholder="Masukkan Umur" />
+                  </div>
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label class="control-label">Tinggi badan (cm)</label>
+                <div class="inputGroupContainer">
+                  <div class="input-group">
+                    <span class="input-group-addon"></span>
+                    <input name="bmiHeight" id="bmiHeight" class="form-control" type="number" required="required" onkeypress="return OnlyNumbers(event);" placeholder="masukkan Tinggi Badan" />
+                  </div>
+                </div>
+              </div>
+
+              <!-- Button -->
+              <div class="button">
+                <label class="control-label"></label>
+                <div class="button-content">
+                  <button type="button" onclick="hitungbmi();">Hitung BMI</button>
+                  <button type="button" onclick="clearbmi();">Reset</button>
+                </div>
+              </div>
+
+            </form>
+          </div>
+
+          <!-- Fitur -->
+          <div class="fitur">
+            <div class="fitur-content">
+              <h4 class="fitur-head">Keunggulan fitur</h4>
+              <ol class="fitur-text">
+                <li>Menghitung berat badan</li>
+                <li>Menentukan kategori berat badan ideal atau tidak</li>
+                <li>Mempersiapkan program penurunan berat badan</li>
+              </ol>
+            </div>
+          </div>
+
+          <div class="information">
+            <p>Kalkulator ini hanya boleh digunakan oleh orang dewasa (wanita hamil atau menyusui tidak boleh mengandalkan pembacaan BMI ini) dan tidak ada tindakan yang harus diambil berdasarkan nilainya selain berkonsultasi dengan orang yang memenuhi syarat seperti dokter.</p>
+            <p id="hasil">Kalkulator akan memberi Anda gambaran tentang perbandingan berat badan Anda dengan nilai umum. Indeks Massa Tubuh (atau BMI) dihitung sebagai berat badan Anda (dalam kilogram) dibagi dengan kuadrat tinggi badan Anda (dalam meter) atau BMI = Kg/M<sup>2</sup>.</p>
+          </div>
+
+        </div>
+ 
+      <!-- Hasil BMI -->
+        <div class="results" id="contenthasil">
+          <div class="main-results">
+            <h3 class="hasil">Hasil</h3>
+            <div class="full-results">
+
+              <div class="results-bmi">
+                  <div class="results-content">
+                    <h4 id="qualityResults"></h4>
+                    <h1 id="resultsBMI"></h1>
+                    <p class="resultsInformation" id="resultsInformation"></p>
+                  </div>
+
+                <div class="info">
+                  <h5 id="qualityBMI"></h5>
+                  <p id="suggestionBMI"></p>
+                  <p>BMI tidak sepenuhnya mewakili diagnosis menyeluruh dari kesehatan tubuh dan resiko penyakit seseorang. Anda perlu konsultasi lebih lanjut mengenai resiko dan kekhawatiran Anda terkait dengan berat badan Anda.</p>
+                </div>
+
+              </div>
+
+              <!-- Hasil Penyakit -->
+              <div class="full-disease" id="disease">
+                <div class="disease">
+
+                  <div id="contentoverweight">
+                    <h4>Beberapa penyakit yang berasal dari kegemukan</h4>
+                    <li>
+                      <li>Diabetes</li>
+                      <li>Hipertensi</li>
+                      <li>Sakit Jantung</li>
+                      <li>Osteoarthritis</li>
+                    </li>
+                  </div>
+
+                  <div id="contentunderweight">
+                    <h4>Berat rendah dapat menyebabkan berbagai masalah penyakit</h4>
+                    <li>
+                      <li>Infertilitas</li>
+                      <li>Anemia</li>
+                      <li>Osteoporosis</li>
+                      <li>Sistem Imun Lemah</li>
+                    </li>
+                  </div>
+                  
+                  <p id="contentnormalweight">Berat badan normal adalah rentang berat badan yang dianggap sehat untuk seseorang, berdasarkan faktor-faktor seperti tinggi badan, jenis kelamin, usia, dan komposisi tubuh. </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="/js/script.js"></script>
+</body>
+
+</html>
